@@ -1,7 +1,11 @@
 require 'bookmark'
+#require 'app'
 
 describe Bookmark do
   it 'stores a list of bookmarks' do
-    expect(Bookmark.all).to eq ["https://www.ruby-lang.org/en/", "https://rspec.info/", "https://github.com/"]
+    list = Bookmark.all
+    expect(list).to include "https://www.ruby-lang.org/en/"
+    expect(list).to include "https://rspec.info/"
+    expect(list).to include "https://github.com/"
   end
 end

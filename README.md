@@ -19,11 +19,11 @@
 >
 > I want to be able to open a list of bookmarks
 
+> [ party ] As a user
 >
+> [ motivation ] So that I can save my favourite sites
 >
->
->
->
+> [ feature ] I want to be able to create new bookmarks and add them to my list
 
 ## Diagrams
 

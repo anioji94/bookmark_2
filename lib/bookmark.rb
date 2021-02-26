@@ -10,16 +10,16 @@ class Bookmark
     end
     
     result = connection.exec("SELECT * FROM bookmarks;")
-    result.map { |bookmark| bookmark['url'] }
+    result.map { |bookmark| "#{bookmark['title']}: #{bookmark['url']}" }
   end
 
-  def self.create(new_url)
+  def self.create(new_url, new_title)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
 
-    connection.exec("INSERT INTO bookmarks (url) VALUES('#{new_url}')")
+    connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{new_url}', '#{new_title}')")
   end
 end
